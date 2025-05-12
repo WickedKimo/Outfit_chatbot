@@ -1,19 +1,12 @@
-# 💬 Chatbot template
+# 👕 穿搭推薦系統（Outfit Recommender）
 
-A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
+這是一個基於當地天氣狀況與使用者情境（約會、運動）的穿搭推薦系統。  
+本系統使用 [Open-Meteo](https://open-meteo.com/) API 提供天氣資料，並透過 [Streamlit](https://streamlit.io/) 建立互動式網頁介面，推薦適合的服裝並顯示圖片。
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://chatbot-template.streamlit.app/)
+## 🔥 功能特色
 
-### How to run it on your own machine
-
-1. Install the requirements
-
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+- 📍 根據使用者輸入的城市自動取得天氣資訊
+- 🌡️ 顯示當日氣溫、體感溫度、降雨機率與紫外線指數
+- 🎯 支援不同穿搭情境（無 / 約會 / 運動）
+- 🧠 根據天氣分析自動推薦服裝建議
+- 🖼️ 顯示隨機選取的服裝示意圖（從 `clothes_db` 目錄載入）
