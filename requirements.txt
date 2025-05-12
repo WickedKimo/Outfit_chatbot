@@ -1,2 +1,5 @@
+geopy
+requests
+Pillow
+matplotlib
 streamlit
-openai
