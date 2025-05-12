@@ -144,6 +144,7 @@ if user_location:
             full_path = os.path.join(base_dir, subfolder, category_folder)
             if not os.path.exists(full_path):
                 return None, f"❌ 找不到路徑: {full_path}"
+            st.write(f"正在讀取圖片：{full_path}")
             files = [f for f in os.listdir(full_path) if f.lower().endswith('.jpg')]
             if not files:
                 return None, f"📁 資料夾 {full_path} 沒有圖片"
