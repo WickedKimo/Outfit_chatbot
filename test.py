@@ -127,13 +127,13 @@ if user_location:
         # 顯示圖片的代碼，與原始代碼類似
 
         # 顯示圖像
-        plt.figure(figsize=(15, 10)) 
-        plt.axis('off')
+        fig, ax = plt.subplots(figsize=(15, 10))  # Explicitly create a figure object
+        ax.axis('off')
 
         # 顯示圖片的邏輯與原始代碼類似
 
         # 顯示圖像
-        st.pyplot()
+        st.pyplot(fig)
 
 else:
     st.write("請輸入有效的城市名稱。")
