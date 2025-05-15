@@ -68,19 +68,19 @@ if user_location:
             elif special_occasion == "運動":
                 suggestions.append("🏃 建議穿著運動服裝和運動鞋，加油!")
             else:
-                if max_temp < 10:
+                if max_feels_like < 10:
                     suggestions.append("🧥 穿羽絨外套、圍巾、毛帽")
-                elif max_temp < 16:
+                elif max_feels_like < 16:
                     suggestions.append("🧥 穿風衣或厚針織衫")
-                elif max_temp < 22:
+                elif max_feels_like < 22:
                     suggestions.append("👕 穿薄外套或長袖上衣")
                 else:
                     suggestions.append("👕 穿短袖上衣")
 
-                if max_temp >= 30:
-                    if temp_diff <= 5:
+                if max_feels_like >= 30:
+                    if temp_diff < 10 :
                         suggestions.append("🩳 建議搭配短褲，涼爽為主")
-                    elif 5 < temp_diff <= 10:
+                    else :
                         suggestions.append("👖 建議搭配長褲，或可攜帶一件薄外套")
                 else:
                     suggestions.append("👖 建議搭配長褲")
@@ -119,18 +119,18 @@ if user_location:
             top_category = ("tops_", "sport_")
             bottom_category = ("bottoms_", "sports_")
         else:
-            if max_temp < 16:
+            if max_feels_like < 10:
                 outwear_category = ("outwears_", "coats_")
-            elif max_temp < 22:
+            elif max_feels_like < 16:
                 outwear_category = ("outwears_", "jackets_")
 
-            if max_temp < 22:
+            if max_feels_like < 22:
                 top_category = ("tops_", "longsleeves_")
             else:
                 top_category = ("tops_", "tshirts_")
 
-            if max_temp >= 30:
-                if temp_diff <= 5:
+            if max_feels_like >= 30:
+                if temp_diff < 10:
                     bottom_category = ("bottoms_", "shorts_")
                 else:
                     bottom_category = ("bottoms_", "pants_")
@@ -176,7 +176,7 @@ if user_location:
             st.subheader("👀 圖像示意")
             cols = st.columns(len(image_slots))
             for i, (img, label) in enumerate(image_slots):
-                cols[i].image(img, caption=label, use_container_width=True)
+                cols[i].image(img, caption=label, use_column_width=True)
 
     else:
         st.error("無法解析城市位置，請重新輸入。")
