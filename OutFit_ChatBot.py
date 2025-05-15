@@ -176,7 +176,7 @@ if user_location:
             st.subheader("👀 圖像示意")
             cols = st.columns(len(image_slots))
             for i, (img, label) in enumerate(image_slots):
-                cols[i].image(img, caption=label, use_column_width=True)
+                cols[i].image(img, caption=label, use_container_width=True)
 
     else:
         st.error("無法解析城市位置，請重新輸入。")
